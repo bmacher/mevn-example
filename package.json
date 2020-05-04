@@ -1,0 +1,23 @@
+{
+  "name": "mevn",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "client": "yarn workspace @mevn/client",
+    "common": "yarn workspace @mevn/common",
+    "server": "yarn workspace @mevn/server",
+    "start:server": "yarn server start",
+    "build": "lerna run build",
+    "clean": "lerna run build:clean && lerna run test:clean",
+    "lint": "lerna run lint",
+    "test": "jest && yarn client test:unit",
+    "test:verbose": "jest --verbose && yarn client test:unit",
+    "test:coverage": "rm -rf coverage && jest --coverage"
+  },
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "lerna": "^3.20.2"
+  }
+}

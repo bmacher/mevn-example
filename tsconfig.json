@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "paths": {
+      "@mevn/*": [
+        "*/src"
+      ]
+    }
+  }
+}

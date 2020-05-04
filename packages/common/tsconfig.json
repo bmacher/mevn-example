@@ -1,0 +1,39 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    /* Basic */
+    "target": "ES2018",
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "newLine": "lf",
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "jest"
+    ],
+    "charset": "utf8",
+    "esModuleInterop": true,
+    /* Source Map Options */
+    "inlineSources": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
