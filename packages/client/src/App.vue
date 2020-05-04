@@ -6,21 +6,32 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import {
+  defineComponent, reactive, toRefs, onMounted,
+} from '@vue/composition-api';
 import { HelloWorld } from '@/components';
 
-@Component({ components: { HelloWorld } })
-export default class Counter extends Vue {
-  public message = 'From Backend: Loading...';
+export default defineComponent({
+  components: { HelloWorld },
 
-  private created(): void {
-    fetch('http://localhost:3000')
-      .then((data) => data.text())
-      .then((data) => { this.message = `From Backend: ${data}`; })
-      .catch(() => { this.message = 'From Backend: Could not load data.'; });
-  }
-}
+  setup() {
+    const state = reactive({
+      message: 'From Backend: Loading...',
+    });
+
+    onMounted(() => {
+      fetch('http://localhost:3000')
+        .then((data) => data.text())
+        .then((data) => { state.message = `From Backend: ${data}`; })
+        .catch(() => { state.message = 'From Backend: Could not load data.'; });
+    });
+
+    return {
+      ...toRefs(state),
+      HelloWorld,
+    };
+  },
+});
 </script>
 
 <style lang="scss">

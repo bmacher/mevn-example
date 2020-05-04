@@ -1,14 +1,19 @@
 <template>
-  <h1>{{ message }}</h1>
+  <h1>{{ message }}</h1>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import { defineComponent, reactive, toRefs } from '@vue/composition-api';
 import { sayHello } from '@mevn/common';
 
-@Component
-export default class Counter extends Vue {
-  public message = `From Common: ${sayHello('World')}`;
-}
+export default defineComponent({
+  setup() {
+    const state = reactive({
+      message: `From Common: ${sayHello('World')}`,
+    });
+
+    return toRefs(state);
+  },
+
+});
 </script>
