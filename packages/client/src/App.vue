@@ -1,45 +1,57 @@
 <template>
-  <div id="app">
-    <hello-world />
-    <h1>{{ message }}</h1>
-  </div>
+  <v-app>
+    <!-- HEADER -->
+    <v-app-bar
+      app
+      clipped-left
+      dark
+    >
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        <v-toolbar-title>TodoApp</v-toolbar-title>
+      </v-col>
+    </v-app-bar>
+
+    <!-- CONTENT -->
+    <v-content>
+      <v-container class="container-width">
+        <!-- INJECTION OF THE VIEW -->
+        <todos-view />
+      </v-container>
+    </v-content>
+
+    <!-- FOOTER -->
+    <v-footer
+      dark
+      app
+    >
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        &copy; {{ new Date().getFullYear() }} by Benjamin Macher
+      </v-col>
+  </v-footer>
+  </v-app>
 </template>
 
 <script lang="ts">
-import {
-  defineComponent, reactive, toRefs, onMounted,
-} from '@vue/composition-api';
-import { HelloWorld } from '@/components';
+import { defineComponent } from '@vue/composition-api';
+import { TodosView } from '@/views';
 
-export default defineComponent({
-  components: { HelloWorld },
+const App = defineComponent({
+  name: 'App',
 
-  setup() {
-    const state = reactive({
-      message: 'From Backend: Loading...',
-    });
-
-    onMounted(() => {
-      fetch('http://localhost:3000')
-        .then((data) => data.text())
-        .then((data) => { state.message = `From Backend: ${data}`; })
-        .catch(() => { state.message = 'From Backend: Could not load data.'; });
-    });
-
-    return {
-      ...toRefs(state),
-      HelloWorld,
-    };
-  },
+  components: { TodosView },
 });
+
+export default App;
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="scss" scoped>
+.container-width {
+  width: 500px;
 }
 </style>
