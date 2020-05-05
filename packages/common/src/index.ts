@@ -1,3 +1,1 @@
-export function sayHello(name: string): string {
-  return `Hello ${name}!`;
-}
+export { Todo, isTodo } from './todo';
