@@ -12,7 +12,7 @@
   "scripts": {
     "start": "concurrently --kill-others-on-fail 'npm:start:*'",
     "start:build": "webpack --watch",
-    "start:nodemon": "nodemon dist/index.js --delay 2000ms",
+    "start:nodemon": "nodemon dist/index.js --delay 3000ms",
     "build": "yarn build:clean && webpack",
     "build:clean": "rm -rf dist",
     "lint": "eslint src/*",
