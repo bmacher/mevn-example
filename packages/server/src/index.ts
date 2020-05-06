@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { Todo, isTodo } from '@mevn/common';
+import { Todo } from '@mevn/common';
 
 const app = express();
 
