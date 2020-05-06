@@ -25,7 +25,7 @@ app.get('/todos', (req, res) => {
 app.put('/todos', (req, res) => {
   const { task } = req.body;
 
-  if (!task || task !== '') {
+  if (task && task !== '') {
     const newTodo = {
       id: currentId,
       task,
