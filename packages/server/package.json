@@ -17,9 +17,9 @@
     "build:clean": "rm -rf dist",
     "lint": "eslint src/*",
     "lint:fix": "eslint src/* --fix",
-    "test": "yarn build && jest",
-    "test:verbose": "yarn build && jest --verbose",
-    "test:coverage": "yarn build && yarn test:clean && jest --coverage",
+    "test": "jest",
+    "test:verbose": "jest --verbose",
+    "test:coverage": "yarn test:clean && jest --coverage",
     "test:clean": "rm -rf coverage"
   },
   "dependencies": {
