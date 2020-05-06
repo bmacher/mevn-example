@@ -30,7 +30,7 @@
               <v-hover>
                 <template v-slot:default="{ hover }">
                   <v-list-item-content
-                    @click="todo.done = !todo.done"
+                    @click="toggleDone(todo)"
                     :style="[todo.done ? { 'text-decoration': 'line-through' } : {}]"
                   >
                     {{ todo.task }}
@@ -66,7 +66,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import { useTodos } from './use-todos';
+import { useTodos } from '@/common/todos';
 
 const TodosView = defineComponent({
   name: 'TodosView',
