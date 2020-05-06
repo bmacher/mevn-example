@@ -8,6 +8,7 @@
     "client": "yarn workspace @mevn/client",
     "common": "yarn workspace @mevn/common",
     "server": "yarn workspace @mevn/server",
+    "start:client": "yarn client serve",
     "start:server": "yarn server start",
     "build": "lerna run build",
     "clean": "lerna run build:clean && lerna run test:clean",
