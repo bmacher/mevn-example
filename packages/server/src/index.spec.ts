@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Todo } from '@mevn/common';
 import { server } from '.';
 
-describe('express server', () => {
+describe('IntegrationTest: express server', () => {
   let info: any;
 
   beforeAll(() => {
