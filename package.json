@@ -14,7 +14,7 @@
     "build": "lerna run build",
     "clean": "lerna run build:clean && lerna run test:clean",
     "lint": "lerna run lint",
-    "test": "jest && yarn client test:unit",
+    "test": "jest",
     "test:verbose": "jest --verbose && yarn client test:unit",
     "test:coverage": "rm -rf coverage && jest --coverage"
   },
