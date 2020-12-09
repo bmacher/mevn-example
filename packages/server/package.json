@@ -50,7 +50,7 @@
     "jest": "^25.5.2",
     "nodemon": "^2.0.3",
     "prettier": "^2.0.4",
-    "ts-jest": "^25.4.0",
+    "ts-jest": "^26.4.4",
     "ts-loader": "^7.0.1",
     "typescript": "~3.4.5",
     "webpack": "^4.43.0",
