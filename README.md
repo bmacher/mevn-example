@@ -3,7 +3,7 @@
 
 # Monorepo (M)EVN Stack - Example TodoApp
 
-This is an implementation example of [Monorepo (M)EVN Stack](https://github.com/bmacher/mevn) but without a [MongoDB](https://www.mongodb.com/de) (yet).
+This is an implementation example of [Monorepo (M)EVN Stack](https://github.com/bmacher/mevn-template) but without a [MongoDB](https://www.mongodb.com/de) (yet).
 
 Start the server
 
